@@ -1,5 +1,6 @@
 package utilities;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -72,5 +73,38 @@ public class Page_Utility {
 	
 	
 	//hw javascript scroll balance,alert
+	public void javaScriptScrollUp(WebDriver driver) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,-350)","");
+	}
+	public void javaScriptScrollToBottom(WebDriver driver) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,document.body.scrollHeight)","");
+	}
+	public void javaScriptScrollIntoView(WebDriver driver, WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+	}
+	// alert
+	public void simpleAlert(WebDriver driver, WebElement element, String text) {
+		element.click();
+		Alert alert = driver.switchTo().alert();
+		text = alert.getText();
+		System.out.println("Alert Message: " + text);
+		alert.accept();
+	}
+	public void confirmationAlert(WebDriver driver,WebElement element) {
+		element.click();
+		Alert alert = driver.switchTo().alert();
+		//alert.accept();
+		alert.dismiss();
+	}
+	public void promptalert(WebDriver driver,WebElement element, String text) {
+		element.click();
+		Alert alert = driver.switchTo().alert();
+		alert.sendKeys(text);
+		alert.accept();
+	}
+
 }
 

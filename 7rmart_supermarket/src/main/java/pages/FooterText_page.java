@@ -14,6 +14,7 @@ public class FooterText_page {
 	@FindBy(xpath="//input[@id='email']")WebElement enterEmailId;
 	@FindBy(xpath="//input[@id='phone']")WebElement enterPhoneNumber;
 	@FindBy(xpath="//button[@name='Update']")WebElement updateButton;
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement alert;
 	
 	public FooterText_page(WebDriver driver) {
 		this.driver = driver;
@@ -45,6 +46,11 @@ public class FooterText_page {
 	public void clickUpdateButton()
 	{
 		updateButton.click();
+	}
+	public boolean isSuccessmessageDisplayed()
+	{
+		return alert.isDisplayed();
+		
 	}
 	
 

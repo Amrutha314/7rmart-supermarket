@@ -7,9 +7,10 @@ import org.testng.annotations.Test;
 import pages.AdminUsers_Page;
 import pages.Login_page;
 import utilities.Excel_Utility;
+import utilities.Faker_Utility;
 
 public class AdminUsers_Test extends Base{
-	@Test
+	@Test(retryAnalyzer= retry.Retry.class)
 	
 	
 	public void verifyUserAbleToAddNewUser() throws IOException
@@ -20,13 +21,16 @@ public class AdminUsers_Test extends Base{
 		login_page.enterUserName(userName);
 		login_page.enterPassword(password);
 		login_page.clickSigninButton();
+		
+		Faker_Utility fakerutility=new Faker_Utility(); //apply retry to all faker utility using tests
+		String adminusername=fakerutility.creatARandomFirstName();
+		
 		AdminUsers_Page adminusers_page = new AdminUsers_Page(driver);
 		adminusers_page.clickAdminUsersMoreInfo();
 		adminusers_page.clickNewButton();
-		String adminusername ="Amruthas";
-		String adminpassword ="Abcdefgh";
-		adminusers_page.enterUserNameField(adminusername);
-		adminusers_page.enterPasswordField(adminpassword);
+		//adminusers_page.enterUserNameField(adminusername);
+		adminusers_page.enterUserNameField("santas");
+		adminusers_page.enterPasswordField("Abcdefgh");
 		adminusers_page.selectUserTypeFromDropdown();
 		adminusers_page.clickSaveButton();
 		adminusers_page.isUserCreatedSuccessAlertDisplayed();

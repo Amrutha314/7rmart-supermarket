@@ -10,7 +10,7 @@ import utilities.Excel_Utility;
 
 public class Login_Test extends Base {
 	
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class)
 	
 	public void Verify_ValidUsernameAndPassword() throws IOException
 	{

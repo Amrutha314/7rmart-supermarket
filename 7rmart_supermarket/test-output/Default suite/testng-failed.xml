@@ -3,12 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testScript.FooterText_Test">
+      <class name="testScript.Login_Test">
         <methods>
+          <include name="Verify_InvalidUserName_And_ValidPassword"/>
+          <include name="verify_ValidUserName_And_InvalidPassword"/>
+          <include name="browserQuitAndClose"/>
           <include name="browserInitialize"/>
-          <include name="verifyuserisAbleToUpdateFooterTextInformation"/>
+          <include name="InvalidUserName_And_InvalidPassword"/>
+          <include name="Verify_ValidUsernameAndPassword"/>
         </methods>
-      </class> <!-- testScript.FooterText_Test -->
+      </class> <!-- testScript.Login_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

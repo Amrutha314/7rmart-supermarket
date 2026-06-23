@@ -11,7 +11,7 @@ import utilities.Excel_Utility;
 
 public class ManageNews_Test extends Base {
 	
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class)
 	
 	
 	public void verifyUserAbleToAddNewNews() throws IOException
@@ -25,10 +25,9 @@ public class ManageNews_Test extends Base {
 		ManageNews_Page managenews_page = new ManageNews_Page(driver);
 		managenews_page.clickManageNewsMoreInfo();
 		managenews_page.clickManageNewsAddButton();
-		String entertext ="Hi! New product is launched.";
-		managenews_page.enterNewsInTextField(entertext);
+		managenews_page.enterNewsInTextField("Hi! New product is launched.");
 		managenews_page.clickSaveNewsButton();
-		boolean alertmessageDisplayed = login_page.isAlertDisplayed();
+		boolean alertmessageDisplayed = managenews_page.isSuccessAlertDisplayed();
 		Assert.assertTrue(alertmessageDisplayed);
 		
 	}

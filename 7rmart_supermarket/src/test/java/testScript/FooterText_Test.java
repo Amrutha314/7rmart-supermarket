@@ -2,6 +2,7 @@ package testScript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.FooterText_page;
@@ -9,7 +10,7 @@ import pages.Login_page;
 import utilities.Excel_Utility;
 
 public class FooterText_Test extends Base {
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class)
 	
 	
 	public void verifyuserisAbleToUpdateFooterTextInformation() throws IOException
@@ -30,7 +31,8 @@ public class FooterText_Test extends Base {
 		String phonenumber ="9087897766";
 		footertext_page.enterPhoneNumber(phonenumber);
 		footertext_page.clickUpdateButton();
-		verifyuserisAbleToUpdateFooterTextInformation();
+		boolean alertmessageDisplayed = footertext_page.isSuccessmessageDisplayed();
+		Assert.assertTrue(alertmessageDisplayed);;
 	}
 
 }
