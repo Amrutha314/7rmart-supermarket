@@ -6,14 +6,16 @@
 	</listeners>
   <test thread-count="5" name="EdgeTest">
   <parameter name="browser" value="Edge"></parameter>
+  <groups><run><include name="regression"></include></run></groups>
     <classes>
-    <class name="testScript.AdminUsers_Test"/> 
+      <class name="testScript.Login_Test"/>
+      <class name="testScript.AdminUsers_Test"/> 
       <class name="testScript.FooterText_Test"/>          
       <class name="testScript.ManageCategory_Test"/>
       <class name="testScript.Logout_Test"/>
       <class name="testScript.ManageNews_Test"/>
       <class name="testScript.ManageContact_Test"/>
-      <class name="testScript.Login_Test"/>
+      
     </classes>
   </test>
 </suite> <!-- Suite -->

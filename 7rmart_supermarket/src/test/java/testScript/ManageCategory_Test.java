@@ -11,7 +11,7 @@ import pages.ManageCategory_Page;
 import utilities.Excel_Utility;
 
 public class ManageCategory_Test extends Base {
-	@Test(retryAnalyzer=retry.Retry.class)
+	@Test(retryAnalyzer=retry.Retry.class, description= "validating manage category")
 	
 	
 	public void verifyUserAbleToAddCategories() throws IOException
@@ -25,7 +25,7 @@ public class ManageCategory_Test extends Base {
 		ManageCategory_Page manage_category = new ManageCategory_Page(driver);
 		manage_category.clickCategoryMoreInfo();
 		manage_category.clickAddNewButton();
-		manage_category.selectcategory("freshfruitsss");
+		manage_category.selectcategory("Fresh Apples category");
 		manage_category.selectDiscount();
 		manage_category.chooseFile(ConstantClass.TESTIMAGEFILE);
 		manage_category.clickSaveButton();

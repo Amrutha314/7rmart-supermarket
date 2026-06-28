@@ -10,7 +10,7 @@ import pages.ManageContact_Page;
 import utilities.Excel_Utility;
 
 public class ManageContact_Test extends Base{
-	@Test(retryAnalyzer=retry.Retry.class)
+	@Test(retryAnalyzer=retry.Retry.class,description= "validating manage contact test")
 	
 	public void verifyUserAbleToAddNewContacts() throws IOException
 	{

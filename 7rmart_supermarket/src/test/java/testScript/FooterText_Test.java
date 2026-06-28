@@ -10,7 +10,7 @@ import pages.Login_page;
 import utilities.Excel_Utility;
 
 public class FooterText_Test extends Base {
-	@Test(retryAnalyzer=retry.Retry.class)
+	@Test(retryAnalyzer=retry.Retry.class,description= "validating manage footer")
 	
 	
 	public void verifyuserisAbleToUpdateFooterTextInformation() throws IOException
@@ -21,6 +21,7 @@ public class FooterText_Test extends Base {
 		login_page.enterUserName(userName);
 		login_page.enterPassword(password);
 		login_page.clickSigninButton();
+		
 		FooterText_page footertext_page=new FooterText_page(driver);
 		footertext_page.clickFooterTextMoreInfo();
 		footertext_page.clickEditButton();

@@ -11,7 +11,7 @@ import utilities.Excel_Utility;
 
 public class Logout_Test extends Base {
 	
-	@Test
+	@Test(description = "Verifying valid logout functionality", groups = {"regression"})
 	
 	public void verifyUserLogout() throws IOException
 	{
@@ -24,6 +24,7 @@ public class Logout_Test extends Base {
 		login_page.enterPassword(password);
 		login_page.clickSigninButton();
 		
+		//logout
 		Logout_Page logout_page = new Logout_Page(driver);
 		logout_page.clickAdminIcon();
 		logout_page.clickLogoutButton();

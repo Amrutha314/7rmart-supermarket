@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="8" total="10" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-24T01:53:53 IST" name="Suite" finished-at="2026-06-24T01:54:20 IST" duration-ms="27210">
+  <suite started-at="2026-06-28T20:48:08 IST" name="grouping" finished-at="2026-06-28T20:48:41 IST" duration-ms="33129">
     <groups>
+      <group name="regression">
+        <method signature="Login_Test.Verify_ValidUsernameAndPassword()[pri:0, instance:testScript.Login_Test@17503f6b]" name="Verify_ValidUsernameAndPassword" class="testScript.Login_Test"/>
+        <method signature="Logout_Test.verifyUserLogout()[pri:0, instance:testScript.Logout_Test@54e041a4]" name="verifyUserLogout" class="testScript.Logout_Test"/>
+      </group> <!-- regression -->
     </groups>
-    <test started-at="2026-06-24T01:53:53 IST" name="EdgeTest" finished-at="2026-06-24T01:54:20 IST" duration-ms="27210">
-      <class name="testScript.AdminUsers_Test">
-        <test-method is-config="true" signature="browserInitialize(java.lang.String)[pri:0, instance:testScript.AdminUsers_Test@2f67a4d3]" started-at="2026-06-24T01:53:53 IST" name="browserInitialize" finished-at="2026-06-24T01:54:04 IST" duration-ms="11305" status="PASS">
+    <test started-at="2026-06-28T20:48:08 IST" name="EdgeTest" finished-at="2026-06-28T20:48:41 IST" duration-ms="33129">
+      <class name="testScript.Login_Test">
+        <test-method is-config="true" signature="browserInitialize(java.lang.String)[pri:0, instance:testScript.Login_Test@17503f6b]" started-at="2026-06-28T20:48:08 IST" name="browserInitialize" finished-at="2026-06-28T20:48:20 IST" duration-ms="11507" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,22 +22,50 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserInitialize -->
-        <test-method signature="verifyUserAbleToAddNewUser()[pri:0, instance:testScript.AdminUsers_Test@2f67a4d3]" started-at="2026-06-24T01:54:04 IST" name="verifyUserAbleToAddNewUser" finished-at="2026-06-24T01:54:17 IST" duration-ms="13244" status="PASS">
+        <test-method signature="Verify_ValidUsernameAndPassword()[pri:0, instance:testScript.Login_Test@17503f6b]" started-at="2026-06-28T20:48:20 IST" name="Verify_ValidUsernameAndPassword" description="Verifying valid login functionality" finished-at="2026-06-28T20:48:27 IST" duration-ms="6908" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserAbleToAddNewUser -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.AdminUsers_Test@2f67a4d3]" started-at="2026-06-24T01:54:17 IST" name="browserQuit" finished-at="2026-06-24T01:54:20 IST" duration-ms="2501" status="PASS">
+        </test-method> <!-- Verify_ValidUsernameAndPassword -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.Login_Test@17503f6b]" started-at="2026-06-28T20:48:27 IST" name="browserQuit" finished-at="2026-06-28T20:48:29 IST" duration-ms="1800" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyUserAbleToAddNewUser status=SUCCESS method=AdminUsers_Test.verifyUserAbleToAddNewUser()[pri:0, instance:testScript.AdminUsers_Test@2f67a4d3] output={null}]]]>
+                <![CDATA[[TestResult name=Verify_ValidUsernameAndPassword status=SUCCESS method=Login_Test.Verify_ValidUsernameAndPassword()[pri:0, instance:testScript.Login_Test@17503f6b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserQuit -->
-      </class> <!-- testScript.AdminUsers_Test -->
+      </class> <!-- testScript.Login_Test -->
+      <class name="testScript.Logout_Test">
+        <test-method is-config="true" signature="browserInitialize(java.lang.String)[pri:0, instance:testScript.Logout_Test@54e041a4]" started-at="2026-06-28T20:48:29 IST" name="browserInitialize" finished-at="2026-06-28T20:48:35 IST" duration-ms="6864" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserInitialize -->
+        <test-method signature="verifyUserLogout()[pri:0, instance:testScript.Logout_Test@54e041a4]" started-at="2026-06-28T20:48:35 IST" name="verifyUserLogout" description="Verifying valid logout functionality" finished-at="2026-06-28T20:48:39 IST" duration-ms="3472" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserLogout -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.Logout_Test@54e041a4]" started-at="2026-06-28T20:48:39 IST" name="browserQuit" finished-at="2026-06-28T20:48:41 IST" duration-ms="2274" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserLogout status=SUCCESS method=Logout_Test.verifyUserLogout()[pri:0, instance:testScript.Logout_Test@54e041a4] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+      </class> <!-- testScript.Logout_Test -->
     </test> <!-- EdgeTest -->
-  </suite> <!-- Suite -->
+  </suite> <!-- grouping -->
 </testng-results>

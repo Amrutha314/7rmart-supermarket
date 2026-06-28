@@ -22,19 +22,12 @@ public class Base {
 	public Properties properties;
 	public FileInputStream fileinput;
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)//executes regardless of grouping in XML
 	@Parameters("browser")
 
 	public void browserInitialize(String browser) throws Exception
 	{
 		//driver = new EdgeDriver(); // browser initialize -WebDriver driver = new ChromeDriver
-		try {
-			properties = new Properties();
-			fileinput = new FileInputStream(ConstantClass.CONFIGFILE);
-			properties.load(fileinput);
-		} catch (Exception e) {
-			System.out.println(e);
-		}
 		if (browser.equalsIgnoreCase("Edge")) {
 			driver = new EdgeDriver();
 		} else if (browser.equalsIgnoreCase("Chrome")) {
@@ -42,6 +35,15 @@ public class Base {
 		} else {
 			throw new Exception("invalid");
 		}
+		
+		try {
+			properties = new Properties();
+			fileinput = new FileInputStream(ConstantClass.CONFIGFILE);
+			properties.load(fileinput);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
 		//driver.get("https://groceryapp.uniqassosiates.com/admin/login");//get()-method in WebDriver interface.
 		driver.get(properties.getProperty("url"));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Wait_Utility.IMPLICIT_WAIT));//implicit wit can given only in base class
@@ -50,7 +52,7 @@ public class Base {
 	
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public void browserQuit(ITestResult iTestResult) throws IOException {  //ITestResult is an interface
 		if (iTestResult.getStatus() == ITestResult.FAILURE) {
 			ScreenshotUtility scrShot = new ScreenshotUtility(); // creating obj

@@ -23,13 +23,13 @@ public class AdminUsers_Test extends Base{
 		login_page.clickSigninButton();
 		
 		Faker_Utility fakerutility=new Faker_Utility(); //apply retry to all faker utility using tests
-		String adminusername=fakerutility.creatARandomFirstName();
+		String enterUserNameField =fakerutility.creatARandomFirstName();
 		
 		AdminUsers_Page adminusers_page = new AdminUsers_Page(driver);
 		adminusers_page.clickAdminUsersMoreInfo();
 		adminusers_page.clickNewButton();
-		//adminusers_page.enterUserNameField(adminusername);
-		adminusers_page.enterUserNameField("santas");
+		//adminusers_page.enterUserNameField(enterUserNameField);
+		adminusers_page.enterUserNameField("Adamgs");
 		adminusers_page.enterPasswordField("Abcdefgh");
 		adminusers_page.selectUserTypeFromDropdown();
 		adminusers_page.clickSaveButton();
