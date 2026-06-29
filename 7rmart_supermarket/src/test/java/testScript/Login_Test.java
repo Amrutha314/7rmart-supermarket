@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.ConstantClass;
 import pages.Login_page;
 import utilities.Excel_Utility;
 
@@ -23,7 +24,7 @@ public class Login_Test extends Base {
 		login_page.enterPassword(password);
 		login_page.clickSigninButton();
 		boolean homepage = login_page.isDashboardDisplayed();
-		Assert.assertTrue(homepage);//it will pass/Fail the TC based on the condition
+		Assert.assertTrue(homepage,ConstantClass.VALIDCREDENTIALS);//it will pass/Fail the TC based on the condition
 		
 	}
 	@Test

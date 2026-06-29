@@ -29,7 +29,7 @@ public class AdminUsers_Test extends Base{
 		adminusers_page.clickAdminUsersMoreInfo();
 		adminusers_page.clickNewButton();
 		//adminusers_page.enterUserNameField(enterUserNameField);
-		adminusers_page.enterUserNameField("Adamgs");
+		adminusers_page.enterUserNameField("Adamgss");
 		adminusers_page.enterPasswordField("Abcdefgh");
 		adminusers_page.selectUserTypeFromDropdown();
 		adminusers_page.clickSaveButton();

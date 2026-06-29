@@ -25,7 +25,7 @@ public class ManageCategory_Test extends Base {
 		ManageCategory_Page manage_category = new ManageCategory_Page(driver);
 		manage_category.clickCategoryMoreInfo();
 		manage_category.clickAddNewButton();
-		manage_category.selectcategory("Fresh Apples category");
+		manage_category.selectcategory("Fresh Apples categories");
 		manage_category.selectDiscount();
 		manage_category.chooseFile(ConstantClass.TESTIMAGEFILE);
 		manage_category.clickSaveButton();
