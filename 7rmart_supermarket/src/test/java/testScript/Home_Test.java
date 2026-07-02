@@ -6,10 +6,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.Login_page;
-import pages.Logout_Page;
+import pages.Home_Page;
 import utilities.Excel_Utility;
 
-public class Logout_Test extends Base {
+public class Home_Test extends Base {
 	
 	@Test(description = "Verifying valid logout functionality", groups = {"regression"})
 	
@@ -25,7 +25,7 @@ public class Logout_Test extends Base {
 		login_page.clickSigninButton();
 		
 		//logout
-		Logout_Page logout_page = new Logout_Page(driver);
+		Home_Page logout_page = new Home_Page(driver);
 		logout_page.clickAdminIcon();
 		logout_page.clickLogoutButton();
 		boolean homepageDisplayed =logout_page.isSignInButtonDisplayed();

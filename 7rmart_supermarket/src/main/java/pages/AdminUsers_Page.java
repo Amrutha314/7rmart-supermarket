@@ -8,8 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Page_Utility;
 
 public class AdminUsers_Page {
+	
+	
 	WebDriver driver;
-	@FindBy(xpath="(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin'])[2]")WebElement adminUserMoreInfo;
+	//@FindBy(xpath="(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin'])[2]")WebElement adminUserMoreInfo;
 	@FindBy(xpath="//a[text()=' New']")WebElement adminNewButton;
 	@FindBy(xpath="//input[@id='username']")WebElement adminUserNameField;
 	@FindBy(xpath="//input[@id='password']")WebElement adminPasswordField;
@@ -21,31 +23,39 @@ public class AdminUsers_Page {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
 	}
-	public void clickAdminUsersMoreInfo()
+	/*
+	public AdminUsers_Page clickAdminUsersMoreInfo()
 	{
 		adminUserMoreInfo.click();
+		return this;
 	}
-	public void clickNewButton()
+	*/
+	public AdminUsers_Page clickNewButton()
 	{
 		adminNewButton.click();
+		return this;
 	}
-	public void enterUserNameField(String adminusername)
+	public AdminUsers_Page enterUserNameField(String adminusername)
 	{
 		adminUserNameField.sendKeys(adminusername);
+		return this;
 	}
 
-	public void enterPasswordField(String adminpassword)
+	public AdminUsers_Page enterPasswordField(String adminpassword)
 	{
 		adminPasswordField.sendKeys(adminpassword);
+		return this;
 	}
-	public void selectUserTypeFromDropdown()
+	public AdminUsers_Page selectUserTypeFromDropdown()
 	{
 		Page_Utility dropdown = new  Page_Utility();//created the object
 		dropdown.dropdownVisibleText(adminUserType,"Admin");;//(webElement name ,pass the Text)
+		return this;
 	}
-	public void clickSaveButton()
+	public AdminUsers_Page clickSaveButton()
 	{
 		adminSaveButton.click();
+		return this;
 	}
 	public boolean isUserCreatedSuccessAlertDisplayed()
 	{

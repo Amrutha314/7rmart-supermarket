@@ -26,21 +26,24 @@ public class Login_page {
 		PageFactory.initElements(driver,this);
 	}
 
-	public void enterUserName(String userName) 
+	public  Login_page enterUserName(String userName) 
 	{
-		userNameField.sendKeys(userName); 
+		userNameField.sendKeys(userName);
+		return this; //return the same page
 	}
 	
-	public void enterPassword(String password)
+	public Login_page enterPassword(String password)
 	{
 		passwordField.sendKeys(password);
+		return this;
 	}
 		
-	public void clickSigninButton()
+	public Home_Page clickSigninButton()
 	{
 		
 		//wait.waitForElementToBeClickable(driver, signInButton);//to apply wait
 		signInButton.click();
+		return new Home_Page(driver);
 	}
 
 	public boolean isDashboardDisplayed()

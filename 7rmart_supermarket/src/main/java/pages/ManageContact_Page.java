@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class ManageContact_Page  {
 	public WebDriver driver;
 	
-	@FindBy(xpath="(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact'])[2]")WebElement manageContactMoreInfo;
+	//@FindBy(xpath="(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact'])[2]")WebElement manageContactMoreInfo;
 	@FindBy(xpath="//i[@class='fas fa-edit']")WebElement editButton;
 	@FindBy(xpath="//input[@id='phone']")WebElement phone;
 	@FindBy(xpath="//input[@id='email']")WebElement email;
@@ -22,46 +22,56 @@ public class ManageContact_Page  {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
 	}
-	public void clickManageContactMoreInfo()
+	/*
+	public ManageContact_Page clickManageContactMoreInfo()
 	{
 		manageContactMoreInfo.click();
+		return this;
 	}
-	public void clickEditButton()
+	*/
+	public ManageContact_Page clickEditButton()
 	{
 		editButton.click();
+		return this;
 	}
-	public void enterPhoneNo(String phoneno)
+	public ManageContact_Page enterPhoneNo(String phoneno)
 	{
 		phone.clear();
 		phone.sendKeys(phoneno);
+		return this;
 		
 	}
-	public void enterEmail(String mail)
+	public ManageContact_Page enterEmail(String mail)
 	{
 		email.clear();
 		email.sendKeys(mail);
+		return this;
 	}
-	public void enterAddress(String adrs) 
+	public ManageContact_Page enterAddress(String adrs) 
 	{
 		address.clear();
 		address.sendKeys(adrs);
+		return this;
 	}
-	public void enterDeliveryTime(String time)
+	public ManageContact_Page enterDeliveryTime(String time)
 	{
 		deliveryTime.clear();
 		deliveryTime.sendKeys(time);
+		return this;
 		
 		
 	}
-	public void enterDeliveryCharge(String limit)
+	public ManageContact_Page enterDeliveryCharge(String limit)
 	{
 		deliveryLimit.clear();
 		deliveryLimit.sendKeys(limit);
+		return this;
 		
 	}
-	public void clickUpdate()
+	public ManageContact_Page clickUpdate()
 	{
 		update.click();
+		return this;
 	}
 	public boolean isAlertDisplayed()
 	{

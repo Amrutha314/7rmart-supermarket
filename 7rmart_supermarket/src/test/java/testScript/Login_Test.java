@@ -6,11 +6,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import constant.ConstantClass;
+import pages.Home_Page;
 import pages.Login_page;
 import utilities.Excel_Utility;
 
 public class Login_Test extends Base {
 	
+	Home_Page homePage;
 	@Test(description = "Verifying valid login functionality", groups = {"regression"})
 	
 	public void Verify_ValidUsernameAndPassword() throws IOException
@@ -20,9 +22,9 @@ public class Login_Test extends Base {
 		String userName = Excel_Utility.getStringData(1, 0, "loginpage");
 		String password = Excel_Utility.getStringData(1, 1,"loginpage");
 		Login_page login_page = new Login_page(driver);
-		login_page.enterUserName(userName);
-		login_page.enterPassword(password);
-		login_page.clickSigninButton();
+		login_page.enterUserName(userName).enterPassword(password);
+		//login_page.enterPassword(password);
+		homePage=login_page.clickSigninButton();
 		boolean homepage = login_page.isDashboardDisplayed();
 		Assert.assertTrue(homepage,ConstantClass.VALIDCREDENTIALS);//it will pass/Fail the TC based on the condition
 		
